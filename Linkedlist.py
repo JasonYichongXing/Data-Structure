@@ -110,39 +110,33 @@ def test():
     firstn = node('first')
     link = linkedlist()
     print('\n---Test creating a empty list:')
-    print(link)
-    print('**Length**: ', link.len())
-
-    
+    _test_print(link, link.len())
     
     link.Insert(firstn)
     print('\n---Test to insert the first value into an empty list:')
-    print(link)
-    print('**Length**: ', link.len())
+    _test_print(link, link.len())
 
     for i in range(5):
         link.Insert(node(i))
     print('\n---Test to insert in the end:')
-    print(link)
-    print('**Length**: ', link.len())
-    
+    _test_print(link, link.len())
     
     N = 2
     link.Insert(node('j'),N)
     print('\n---Test to insert "j" after position ' + str(N) + ':')
-    print(link)
-    print('**Length**: ', link.len())
-    
+    _test_print(link, link.len())
+
     link.Insert(node('new'),0)
     print('\n---Test to insert "new" at head:')
-    print(link)
-    print('**Length**: ', link.len())
+    _test_print(link, link.len())
     
     link.Insert(node('E'),-1)
     print('\n---Test to insert "E" at end:')
-    print(link)
-    print('**Length**: ', link.len())
-
+    _test_print(link, link.len())
+    
+def _test_print(ll,lth):
+    print(ll)
+    print('**Length**: ', lth)
 
 if __name__ == '__main__':
     test()
