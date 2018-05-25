@@ -16,7 +16,7 @@ def splitint(N):
             
             
 '''
-Easy to be test: 
+Easy to test: 
 '''
 N = 200    
 list(splitint(N)) # 200 = 2^3 + 2^6 + 2^7 = 
