@@ -2,7 +2,7 @@
 
 # 0. Sum of Power of 2
 '''
-Every integer can be split be the sum of the power of 2, because 1 = 2^0 and any integer can be considered as the summation of 1.
+Every integer can be split into the sum of the power of 2, because 1 = 2^0 and any integer can be considered as the summation of 1.
 
 We can do this split easily in python, as below:
 '''
