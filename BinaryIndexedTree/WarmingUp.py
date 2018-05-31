@@ -45,9 +45,44 @@ Input: an integer array
 To find: the sum of the elements between indices i and j (i ≤ j).  ~O(logn)
 Mutable: the array can be updated.   ~O(logn)
 '''
+Pass
 
+# 2. Update Binary Indexed Tree.
+'''
+Let's say we'd lile to change the value on index i by value_chng
+First of all, obviously current index tree[i] need to be added by that value.
+Then, instead of updating every the subsequent elementes after i, only partial points need to be updated.
 
+So, how to determine those points?
 
+We use bitwise operator AND: &
+'''
 
+def update(i, value_chng):
+    while(i <= MaxN):
+        tree[i] += value_chng
+        i += i & -i
+        
+        
+'''
+i.e. starting from i = 1, the indexes need to update is:
+1 & -1 1
+2 & -2 2
+4 & -4 4
+8 & -8 8
+16 & -16 16
+32 & -32 32
+64 & -64 64
 
+if i = 3, then:
+3 & -3 1
+4 & -4 4
+8 & -8 8
+16 & -16 16
+32 & -32 32
+64 & -64 64
+...
 
+It will added to the nearest 2^i then, go along the 2^i+1, 2^i+2, ...
+
+'''
