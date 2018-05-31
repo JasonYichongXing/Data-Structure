@@ -67,7 +67,7 @@ def update(i, value_chng):
 '''
 i.e. starting from i = 1, the indexes need to update is:
 1 & -1 1
-2 & -2 2
+2 & -2 2  <- nearest 2^i
 4 & -4 4
 8 & -8 8
 16 & -16 16
@@ -76,11 +76,22 @@ i.e. starting from i = 1, the indexes need to update is:
 
 if i = 3, then:
 3 & -3 1
-4 & -4 4
+4 & -4 4   <- nearest 2^i
 8 & -8 8
 16 & -16 16
 32 & -32 32
 64 & -64 64
+
+if i = 129
+129 & -129 1
+130 & -130 2
+132 & -132 4
+136 & -136 8
+144 & -144 16
+160 & -160 32
+192 & -192 64
+256 & -256 256.  <- nearest 2^i
+512 & -512 512
 ...
 
 It will added to the nearest 2^i then, go along the 2^i+1, 2^i+2, ...
