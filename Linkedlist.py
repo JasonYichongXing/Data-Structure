@@ -51,14 +51,16 @@ class linkedlist:
         return self._index(index).data
     
     def __eq__(self, other):
-        if self.length == other.length:
-            for a, b in zip(self, other):
-                return a == b
-        else:
+        if self.length != other.length:
             return False
+        
+        for a, b in zip(self, other):
+            if a != b:
+                return False 
+    
+        return True
                     
        
-
     def insert(self, newNode, index=-1):
         """ Insert a node at a given position
          index = -1: insert at the end. (Default)
@@ -117,4 +119,3 @@ class linkedlist:
                 strforprint += '\n'
                 curnode = curnode.next
         return strforprint
-    
